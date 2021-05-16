@@ -1,0 +1,7 @@
+.color{
+    color:white;
+    padding: 10px;
+}
+.color:hover{
+    color:blue;
+}

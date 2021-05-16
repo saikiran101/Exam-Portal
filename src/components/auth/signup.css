@@ -1,0 +1,35 @@
+.animated{
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+@-webkit-keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+.style{
+  width:80%;
+  max-height:400px;
+  border-radius: 10%;
+  background-color: white;
+  margin: 10% auto;
+}
+.style1{
+  max-width:88%;
+  max-height:460px;
+  border-radius: 10%;
+  background-color: white;
+  margin: 10% auto;
+  
+}
