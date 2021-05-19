@@ -1,11 +1,14 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect} from "react";
 import { Button, Card, Row, Col } from "react-bootstrap";
 import quizData from "../db/db";
+import firebase from '../../config/fbConfig';
 import "./style.css";
-//import CountDown from "react-countdown-clock";
 let myAnswers = {};
 
-const quiz = (props) => {
+const db =firebase.firestore();
+
+const quiz = () => {
+	// const [quizData,setQuizData]= useState([]);
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [temp, settemp] = useState(0);
 	const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -17,6 +20,13 @@ const quiz = (props) => {
 	const refs = useRef(currentQuestion);
 	//   const refers = useRef(currentQuestion);
 
+	useEffect(() => {
+		
+		db.collection('P-python').onSnapshot(snapshot=>{
+			console.log(snapshot.docs.map(doc=>doc.data()));
+			// setQuizData(snapshot.docs.map(doc=>doc.data()));
+		})
+	}, []);
 	const previewsQ = () => {
 		if (currentQuestion > 0) setCurrentQuestion(currentQuestion - 1);
 		setSelectedAnswer("");
@@ -62,6 +72,7 @@ const quiz = (props) => {
 		}
 	};
 	const MarkQ = () => {
+		
 		if (currentQuestion < quizData.lenght - 1)
 			setCurrentQuestion(currentQuestion + 1);
 		refs.current.childNodes[currentQuestion].style.backgroundColor = "yellow";
@@ -70,6 +81,8 @@ const quiz = (props) => {
 		setisAnswerd("none");
 		setoptionclass("options");
 	};
+	// const {projects}= this.props;
+	//      console.log(projects);
 	//
 	//useEffect(async () => {
 	//	let _status = await localStorage.getItem("status");
@@ -96,12 +109,12 @@ const quiz = (props) => {
 						style={{ padding: "0 !important", display: "flex-end" }}
 					>
 						<Card className="d-block mx-auto" style={{ width: "100%" }}>
-							{/*<CountDown
+							{/* <CountDown
 										seconds={1800}
 										color="darkyellow"
 										alpha={0.4}
 										size={90}
-									/>*/}
+									/> */}
 							<Card.Body>
 								<Card.Text>
 									{currentQuestion + 1 + " out of " + quizData.length}
@@ -200,4 +213,16 @@ const quiz = (props) => {
 	}
 };
 
+
+// const mapStateToProps=(state=>{
+// 	return{
+// 		projects:state.firebase.ordered.projects
+// 	}
+// })
 export default quiz;
+// compose(
+// 	connect(mapStateToProps),
+// 	firebaseConnect([
+// 		{collection:'quiz'}
+//   ])
+// ) 

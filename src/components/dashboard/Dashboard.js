@@ -21,6 +21,7 @@ class Dashboard extends Component {
                 text="Logical programming questions based on java and python."
                 visit="/LogicalProgramming"
                 bname="GET"
+                style={{width:"200px"}}
               />
             </Col>
             <Col md={6}>

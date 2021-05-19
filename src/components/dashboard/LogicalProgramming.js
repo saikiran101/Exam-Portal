@@ -11,7 +11,7 @@ const LogicalProgramming = () => {
                         <Card
                             title="Java"
                             text="Logical MCQ  on OOP's concepts"
-                            visit="/"
+                            visit="/instractions"
                             bname="GET Test"
                         />
                     </Col>
@@ -19,7 +19,7 @@ const LogicalProgramming = () => {
                         <Card
                             title="Python"
                             text="Logical MCQ on OOP's concepts"
-                            visit="/"
+                            visit="/instractions"
                             bname="GET Test"
                         />
                     </Col>

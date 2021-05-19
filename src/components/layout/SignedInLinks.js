@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { signOut } from '../../store/actions/authActions'
-import { Nav, Navbar } from 'react-bootstrap'
+import { Button, Nav, Navbar } from 'react-bootstrap'
 import './log.css'
 //import { Avatar } from '@material-ui/core'
 
@@ -29,9 +29,9 @@ const SignedInLinks = (props) => {
 				>
 					Log Out
 				</Nav.Link>
-				<Nav.Link ClassName="btn btn-danger" style={{ color: "white" }}>
+				<Button className="btn btn-danger" style={{ color: "white", backgroundColor:"pick" }}>
 					{props.profile.initials}
-				</Nav.Link>
+				</Button>
 			</Nav>
 		</Navbar.Collapse>
 	);

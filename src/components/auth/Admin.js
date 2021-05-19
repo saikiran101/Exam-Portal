@@ -24,7 +24,7 @@ class Admin1 extends Component {
 	};
 	render() {
 		const { authError, auth } = this.props;
-		if (auth.uid) return <Redirect to="/AdminDash" />;
+		if (auth.uid) return <Redirect to="/AdminDashBoard" />;
 		console.log(auth);
 		return (
 			<div>

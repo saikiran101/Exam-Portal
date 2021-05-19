@@ -11,7 +11,7 @@ const ProgrammingMCQ = () => {
                         <Card
                             title="Java"
                             text="MCQ on OPP's concepts"
-                            visit="/Test1"
+                            visit="/instractions"
                             bname="GET Test"
                         />
                     </Col>

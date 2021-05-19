@@ -2,7 +2,7 @@ import React from "react";
 import SignedInLinks from './SignedInLinks'
 import SignedOutLinks from './SignedOutLinks'
 import { connect } from "react-redux";
-import { Row, Col,Navbar, Nav } from "react-bootstrap";
+import {Navbar, Nav } from "react-bootstrap";
 import test from "../images/test.png";
 
 
@@ -12,15 +12,11 @@ const Navb = (props) => {
 	  const links = auth.uid ? <SignedInLinks profile={profile} /> : <SignedOutLinks />;
 
 	return (
-		<div style={{padding:"0 !important",margin:"0 !important"}}>
-			<Row>
-				<Col xs={12}>
-					
+		<div >
 					<Navbar
-						style={{ padding: "5px",backgroundColor: "#757575" }} expand="lg"
+						style={{backgroundColor: "#757575" }} expand="lg"
 					>
-							<Navbar.Brand href="#home" style={{ fontSize: "31px" }}>
-								{" "}
+							<Navbar.Brand href="/" style={{ fontSize: "31px" }}>
 								<img
 									style={{ maxWeight: "40px", maxHeight: "40px" }}
 									src={test}
@@ -35,8 +31,6 @@ const Navb = (props) => {
 								</Nav>
 							</Navbar.Collapse>
 					</Navbar>
-				</Col>
-			</Row>
 		</div>
 	);
 };

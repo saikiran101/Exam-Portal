@@ -10,11 +10,13 @@ import ProgrammingMCQ from './components/dashboard/ProgrammingMCQ';
 import Instractions from './components/dashboard/Instractions';
 import quiz from './components/dashboard/quiz';
 import Admin from './components/auth/Admin';
-import AdminReg from './components/auth/AdminReg';
-import AdminDash from './components/dashboard/AdminDash';
+//import AdminReg from './components/auth/AdminReg';
+import AdminDash from './components/adminDashboard/AdminDash';
 import quiz1 from './components/dashboard/quiz1';
 import Navb from './components/layout/Navb';
 import ContactUs from './components/layout/ContactUs';
+import AdminDashBoard from './components/adminDashboard/AdminDashBoard';
+import JavaQb from './components/adminDashboard/JavaQb';
 //import Footer from './components/layout/Footer';
 //import Navbar from './components/layout/Navbar1'
 
@@ -38,8 +40,9 @@ class App extends Component {
             <Route path='/Test' component={quiz} />
             <Route path="/Test1" component={quiz1}/>
             <Route path='/Admin' component={Admin} />
-            <Route path='/AdminReg' component={AdminReg} />
             <Route path='/AdminDash' component={AdminDash} />
+            <Route path='/AdminDashBoard' component={AdminDashBoard} />
+            <Route path='/JavaQb' component={JavaQb} />
             <Route path='/contactUs' component={ContactUs} />
             <Redirect path='/'/>
           </Switch>
