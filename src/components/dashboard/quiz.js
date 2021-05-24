@@ -23,8 +23,10 @@ const quiz = () => {
 	useEffect(() => {
 		
 		db.collection('P-python').onSnapshot(snapshot=>{
-			console.log(snapshot.docs.map(doc=>doc.data()));
+			let data =snapshot.docs.map(doc=>doc.data()) 
+			console.log(data)
 			// setQuizData(snapshot.docs.map(doc=>doc.data()));
+			console.log(data[0].options)
 		})
 	}, []);
 	const previewsQ = () => {

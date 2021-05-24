@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import firebase from '../../config/fbConfig';
+import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from '@material-ui/icons/Delete';
 const db = firebase.firestore();
 const useStyles = makeStyles((theme) => ({
@@ -14,9 +15,9 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 const Tablelist = (props) => {
-        const classes = useStyles();
-    const [open,setOpen]= useState(false);
-    const [input, setInput]=useState();
+    //    const classes = useStyles();
+    //const [open,setOpen]= useState(false);
+    //const [input, setInput]=useState();
 
 
     //const updateTodo =()=>{
@@ -27,20 +28,22 @@ const Tablelist = (props) => {
     //    setOpen(false);
     //}
     
-    return (
-        <div>
-          <tbody>
-            <tr>
-                <td></td>
-                    <td colSpan="2">{props.question.question}</td>
-                <td>{props.question.options}</td>
-                <td>{props.question.answer}</td>
-                <td>"@twitter"</td>
-            </tr>
-        </tbody>
-
-        </div>   
-    );
+  return (
+		<tr>
+			<td colSpan="2">{props.quiz.question}</td>
+			<td>{props.quiz.options}</td>
+			<td>{props.quiz.answer}</td>
+			<td>
+				<EditIcon />
+				<DeleteIcon
+					style={{ marginLeft: "20px" }}
+					onClick={(event) =>
+						db.collection("P-python").doc(props.quiz.id).delete()
+					}
+				/>
+			</td>
+		</tr>
+	);
 }
 
 export default Tablelist

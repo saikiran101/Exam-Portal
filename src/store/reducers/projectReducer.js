@@ -8,6 +8,12 @@ const projectReducer = (state = initState, action) => {
 		case "CREATE_PROJECT_ERROR":
 			console.log("create project error");
 			return state;
+		case "CREATE_PYTHON_SUCCESS":
+			console.log("create python success");
+			return state;
+		case "CREATE_PYTHON_ERROR":
+			console.log("create python error");
+			return state;
 		default:
 			return state;
 	}

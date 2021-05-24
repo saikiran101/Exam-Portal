@@ -40,7 +40,7 @@ const quizData = [
     options: [
       `A)  English`,
       `B)  PHP`,
-      `C)  C`,
+      `C)   C`,
       `D) All of the above`,
     ],
     answer: `C) C`,

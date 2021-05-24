@@ -18,7 +18,7 @@ const AdminDashBoard = () => {
                     <Card
                         title="Python"
                         text="MCQ on OPP's concepts"
-                        visit="/Instractions"
+                        visit="/PythonQb"
                         bname="Add QuestionBank"
                     />
                 </Col>
